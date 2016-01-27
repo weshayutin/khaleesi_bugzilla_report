@@ -6,4 +6,4 @@ popd
 pushd /tmp/khaleesi/playbooks/; egrep -rn rhbz | sed 's/.*rhbz//' | cut -b 1-7 > /tmp/buglist
 popd
 pwd
-python3 bugzilla_tools/ospd_eng_bug_report.py
+python3 ospd_eng_bug_report.py

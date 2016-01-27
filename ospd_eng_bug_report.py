@@ -55,5 +55,5 @@ msg = report(list)
 print(msg)
 
 
-email_send(os.environ['REPORT_OWNER'], os.environ['REPORT_OWNER'], 'openstack ci workaround/skip report', msg)
+email_send(os.environ['REPORT_OWNER'], os.environ['REPORT_LIST'], 'openstack ci workaround/skip report', msg)
 
