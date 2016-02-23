@@ -29,17 +29,17 @@ def email_send(email_from, email_to, subject, body):
 # send a list of bugs to the method
 def report(bugs):
     msg = ""
-    msg += "*"*160 + "\n\n"
+    msg += "*"*180 + "\n\n"
     msg += os.environ['TEAM_INTRO_MSG']
     msg += '\n\n'
     msg += "*"*160 + "\n\n"
-    msg += "{0:<10} {1:>25}: {2:<15} {3:<40} {4:>30}\n".format("status", "component", "severity", "bz url ", "summary")
+    msg += "{0:<10} {1:>11} {2:>25}: {3:<15} {4:<40} {5:>30}\n".format("status", "osp version", "component", "severity", "bz url ", "summary")
     msg += "-"*160
     msg += "\n\n"
     bug_list = bz.getbugs(bugs)
     for bug in bug_list:
         #pdb.set_trace()
-        msg += "{0:<10} {1:>25}: {2:<15} {3:<40} {4:>30}\n\n".format(bug.status, bug.component, bug.severity, bug.weburl, bug.summary )
+        msg += "{0:<10} {1:>11} {2:>25}: {3:<15} {4:<40} {5:>30}\n\n".format(bug.status, bug.version, bug.component, bug.severity, bug.weburl, bug.summary )
     return msg
 
 
